@@ -1,0 +1,4923 @@
+[
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var slugify = require('strman').slugify;\nlet title = \"A Javascript string manipulation library.\";\nlet value = slugify(title);",
+        "html": "<p>var slugify = require(&#39;strman&#39;).slugify;<br />let title = &quot;A Javascript string manipulation library.&quot;;<br />let value = slugify(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The value to slugify",
+        "name": "value",
+        "description": "<ul>\n<li>The value to slugify</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - The slugified value",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>The slugified value</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Converts a value to a slug.</p>",
+      "summary": "<p>Converts a value to a slug.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 3,
+    "codeStart": 12,
+    "code": "const slugify = (value) => {\n\n    value = toLowerCase(value);\n    value = trim(value);\n    value = removeSpaces(value, '-');\n    value = replace(value, '&','-and-');\n    value = transliterate(value);\n    value = replace(value, '[^\\\\w\\\\-]+', '');\n    value = replace(value, '\\-\\-+','-');\n\n    return value;\n};\n\nexport {slugify};",
+    "ctx": {
+      "type": "declaration",
+      "name": "slugify",
+      "value": "(value) => {",
+      "string": "slugify"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var toLowerCase = require('strman').toLowerCase;\nlet title = \"A Javascript string manipulation library.\";\nlet result = toLowerCase(title);",
+        "html": "<p>var toLowerCase = require(&#39;strman&#39;).toLowerCase;<br />let title = &quot;A Javascript string manipulation library.&quot;;<br />let result = toLowerCase(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String in lowercase.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String in lowercase.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Transform to lowercase.</p>",
+      "summary": "<p>Transform to lowercase.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 26,
+    "codeStart": 35,
+    "code": "const toLowerCase = value => value.toLowerCase();\n\nexport {toLowerCase};",
+    "ctx": {
+      "type": "declaration",
+      "name": "toLowerCase",
+      "value": "value => value.toLowerCase()",
+      "string": "toLowerCase"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var toUpperCase = require('strman').toUpperCase;\nlet title = \"A Javascript string manipulation library.\";\nlet result = toUpperCase(title);",
+        "html": "<p>var toUpperCase = require(&#39;strman&#39;).toUpperCase;<br />let title = &quot;A Javascript string manipulation library.&quot;;<br />let result = toUpperCase(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String in uppercase.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String in uppercase.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Transform to uppercase.</p>",
+      "summary": "<p>Transform to uppercase.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 39,
+    "codeStart": 48,
+    "code": "const toUpperCase = value => value.toUpperCase();\n\nexport {toUpperCase};",
+    "ctx": {
+      "type": "declaration",
+      "name": "toUpperCase",
+      "value": "value => value.toUpperCase()",
+      "string": "toUpperCase"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var isLowerCase = require('strman').isLowerCase;\nlet title = \"A Javascript string manipulation library.\";\nlet result = isLowerCase(title);",
+        "html": "<p>var isLowerCase = require(&#39;strman&#39;).isLowerCase;<br />let title = &quot;A Javascript string manipulation library.&quot;;<br />let result = isLowerCase(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{Boolean} - String is lowercase?.",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String is lowercase?.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Verify if has lowerCase</p>",
+      "summary": "<p>Verify if has lowerCase</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 52,
+    "codeStart": 61,
+    "code": "const isLowerCase = (value) => value === toLowerCase(value);\n\nexport {isLowerCase};",
+    "ctx": {
+      "type": "declaration",
+      "name": "isLowerCase",
+      "value": "(value) => value === toLowerCase(value)",
+      "string": "isLowerCase"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var isUpperCase = require('strman').isUpperCase;\nlet title = \"A Javascript string manipulation library.\";\nlet result = isUpperCase(title);",
+        "html": "<p>var isUpperCase = require(&#39;strman&#39;).isUpperCase;<br />let title = &quot;A Javascript string manipulation library.&quot;;<br />let result = isUpperCase(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{Boolean} - String is UPPERCASE?.",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String is UPPERCASE?.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Verify if has UPPERCASE</p>",
+      "summary": "<p>Verify if has UPPERCASE</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 65,
+    "codeStart": 74,
+    "code": "const isUpperCase = (value) => value === toUpperCase(value);\n\nexport {isUpperCase};",
+    "ctx": {
+      "type": "declaration",
+      "name": "isUpperCase",
+      "value": "(value) => value === toUpperCase(value)",
+      "string": "isUpperCase"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var toStudlyCaps = require('strman').toStudlyCaps;\nlet title = \"A Javascript string manipulation library.\";\nlet result = toStudlyCaps(title);",
+        "html": "<p>var toStudlyCaps = require(&#39;strman&#39;).toStudlyCaps;<br />let title = &quot;A Javascript string manipulation library.&quot;;<br />let result = toStudlyCaps(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String in StudlyCaps.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String in StudlyCaps.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Transform to StudlyCaps.</p>",
+      "summary": "<p>Transform to StudlyCaps.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 78,
+    "codeStart": 87,
+    "code": "const toStudlyCaps = value => {\n    let string = value.replace(/[\\-_\\s]+(.)?/g,\n                            (match, chr) => chr ? toUpperCase(chr) : '');\n    return toUpperCase(string.substr(0, 1)) + string.substr(1);\n};\n\nexport {toStudlyCaps};",
+    "ctx": {
+      "type": "declaration",
+      "name": "toStudlyCaps",
+      "value": "value => {",
+      "string": "toStudlyCaps"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var toCamelCase = require('strman').toCamelCase;\nlet title = \"A Javascript string manipulation library.\";\nlet result = toCamelCase(title);",
+        "html": "<p>var toCamelCase = require(&#39;strman&#39;).toCamelCase;<br />let title = &quot;A Javascript string manipulation library.&quot;;<br />let result = toCamelCase(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String in camelCase.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String in camelCase.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Transform to camelCase.</p>",
+      "summary": "<p>Transform to camelCase.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 95,
+    "codeStart": 104,
+    "code": "const toCamelCase = value => {\n    let string = toStudlyCaps(value);\n    return toLowerCase(string.substr(0, 1)) + string.substr(1);\n};\n\nexport {toCamelCase};",
+    "ctx": {
+      "type": "declaration",
+      "name": "toCamelCase",
+      "value": "value => {",
+      "string": "toCamelCase"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var toDecamelize = require('strman').toDecamelize;\nlet title = \"A Javascript string manipulation library.\";\nlet result = toDecamelize(title);",
+        "html": "<p>var toDecamelize = require(&#39;strman&#39;).toDecamelize;<br />let title = &quot;A Javascript string manipulation library.&quot;;<br />let result = toDecamelize(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String decamelized.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String decamelized.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Decamelize String</p>",
+      "summary": "<p>Decamelize String</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 111,
+    "codeStart": 120,
+    "code": "const toDecamelize = (value, chr = '_') => {\n    let camel = toCamelCase(value);\n    let string = camel.replace(/([A-Z])+/g, chr + '$1');\n    return toLowerCase(string);\n};\n\nexport {toDecamelize};",
+    "ctx": {
+      "type": "declaration",
+      "name": "toDecamelize",
+      "value": "(value, chr = '_') => {",
+      "string": "toDecamelize"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var toSnakeCase = require('strman').toSnakeCase;\nlet title = \"A Javascript string manipulation library.\";\nlet result = toSnakeCase(title);",
+        "html": "<p>var toSnakeCase = require(&#39;strman&#39;).toSnakeCase;<br />let title = &quot;A Javascript string manipulation library.&quot;;<br />let result = toSnakeCase(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String in snake_case.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String in snake_case.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Transform to snake_case.</p>",
+      "summary": "<p>Transform to snake_case.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 128,
+    "codeStart": 137,
+    "code": "const toSnakeCase = value => {\n    return toDecamelize(value, '_');\n};\n\nexport {toSnakeCase};",
+    "ctx": {
+      "type": "declaration",
+      "name": "toSnakeCase",
+      "value": "value => {",
+      "string": "toSnakeCase"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var toKebabCase = require('strman').toKebabCase;\nlet title = \"A Javascript string manipulation library.\";\nlet result = toKebabCase(title);",
+        "html": "<p>var toKebabCase = require(&#39;strman&#39;).toKebabCase;<br />let title = &quot;A Javascript string manipulation library.&quot;;<br />let result = toKebabCase(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String in kebab-case.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String in kebab-case.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Transform to kebab-case.</p>",
+      "summary": "<p>Transform to kebab-case.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 143,
+    "codeStart": 152,
+    "code": "const toKebabCase = value => {\n    return toDecamelize(value, '-');\n};\n\nexport {toKebabCase};\nimport {entitiesDecode} from './lib/entities';\nimport {replace} from './strman';\nimport\n    {LENGTH_HEXADECIMAL, LENGTH_BINARY, LENGTH_DECIMAL, BASE_HEXADECIMAL, BASE_BINARY, BASE_DECIMAL}\n    from './lib/numerical.base';\n\nconst decode = (value, length, base) =>\n    value.match(new RegExp(`.{1,${length}}`,'g'))\n        .map((string)=>String.fromCharCode(parseInt(string, base))).join('');",
+    "ctx": {
+      "type": "declaration",
+      "name": "toKebabCase",
+      "value": "value => {",
+      "string": "toKebabCase"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var hexDecode = require('strman').hexDecode;\nlet result = hexDecode(\"007300740072006d0061006e\");",
+        "html": "<p>var hexDecode = require(&#39;strman&#39;).hexDecode;<br />let result = hexDecode(&quot;007300740072006d0061006e&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - Value to decode",
+        "name": "value",
+        "description": "<ul>\n<li>Value to decode</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{String} - String decoded.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String decoded.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Convert hexadecimal unicode (4 digits) string to string chars</p>",
+      "summary": "<p>Convert hexadecimal unicode (4 digits) string to string chars</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 168,
+    "codeStart": 176,
+    "code": "const hexDecode = (value) => decode(value, LENGTH_HEXADECIMAL, BASE_HEXADECIMAL);\n\nexport {hexDecode};",
+    "ctx": {
+      "type": "declaration",
+      "name": "hexDecode",
+      "value": "(value) => decode(value, LENGTH_HEXADECIMAL, BASE_HEXADECIMAL)",
+      "string": "hexDecode"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var binDecode = require('strman').binDecode;\nlet result = binDecode(\"000000000111001100000000011101000000000001110010000000000110110100000000011000010000000001101110\");",
+        "html": "<p>var binDecode = require(&#39;strman&#39;).binDecode;<br />let result = binDecode(&quot;000000000111001100000000011101000000000001110010000000000110110100000000011000010000000001101110&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - Value to decode",
+        "name": "value",
+        "description": "<ul>\n<li>Value to decode</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{String} - String decoded.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String decoded.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Convert binary unicode (16 digits) string to string chars</p>",
+      "summary": "<p>Convert binary unicode (16 digits) string to string chars</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 180,
+    "codeStart": 188,
+    "code": "const binDecode = (value) => decode(value, LENGTH_BINARY, BASE_BINARY);\n\nexport {binDecode};",
+    "ctx": {
+      "type": "declaration",
+      "name": "binDecode",
+      "value": "(value) => decode(value, LENGTH_BINARY, BASE_BINARY)",
+      "string": "binDecode"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var decDecode = require('strman').decDecode;\nlet result = decDecode(\"001150011600114001090009700110\");",
+        "html": "<p>var decDecode = require(&#39;strman&#39;).decDecode;<br />let result = decDecode(&quot;001150011600114001090009700110&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - Value to decode",
+        "name": "value",
+        "description": "<ul>\n<li>Value to decode</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{String} - String decoded.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String decoded.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Convert binary unicode (16 digits) string to string chars</p>",
+      "summary": "<p>Convert binary unicode (16 digits) string to string chars</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 192,
+    "codeStart": 200,
+    "code": "const decDecode = (value) => decode(value, LENGTH_DECIMAL, BASE_DECIMAL);\n\nexport {decDecode};",
+    "ctx": {
+      "type": "declaration",
+      "name": "decDecode",
+      "value": "(value) => decode(value, LENGTH_DECIMAL, BASE_DECIMAL)",
+      "string": "decDecode"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var urlDecode = require('strman').urlDecode;\nlet result = urlDecode(\"https://github.com/dleitee/strman/&name=%C3%A1%C3%A9%C3%AD%C3%B3%C3%BA\");",
+        "html": "<p>var urlDecode = require(&#39;strman&#39;).urlDecode;<br />let result = urlDecode(&quot;<a href=\"https://github.com/dleitee/strman/&amp;name=%C3%A1%C3%A9%C3%AD%C3%B3%C3%BA\">https://github.com/dleitee/strman/&amp;name=%C3%A1%C3%A9%C3%AD%C3%B3%C3%BA</a>&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The string to be decoded",
+        "name": "value",
+        "description": "<ul>\n<li>The string to be decoded</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{String} - Returns the decoded string.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>Returns the decoded string.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Decodes URL-encoded string</p>",
+      "summary": "<p>Decodes URL-encoded string</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 204,
+    "codeStart": 212,
+    "code": "const urlDecode = (value) => decodeURI(value);\n\nexport {urlDecode};",
+    "ctx": {
+      "type": "declaration",
+      "name": "urlDecode",
+      "value": "(value) => decodeURI(value)",
+      "string": "urlDecode"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var base64Decode = require('strman').base64Decode;\nlet result = base64Decode(\"c3RybWFu\");",
+        "html": "<p>var base64Decode = require(&#39;strman&#39;).base64Decode;<br />let result = base64Decode(&quot;c3RybWFu&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The data to decode.",
+        "name": "value",
+        "description": "<ul>\n<li>The data to decode.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "- The decoded data.",
+        "types": [],
+        "typesDescription": "",
+        "variable": false,
+        "nonNullable": false,
+        "nullable": false,
+        "optional": false,
+        "description": "<ul>\n<li>The decoded data.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Decodes data encoded with MIME base64</p>",
+      "summary": "<p>Decodes data encoded with MIME base64</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 216,
+    "codeStart": 224,
+    "code": "const base64Decode = (value) => new Buffer(value, 'base64').toString();\n\nexport {base64Decode};",
+    "ctx": {
+      "type": "declaration",
+      "name": "base64Decode",
+      "value": "(value) => new Buffer(value, 'base64').toString()",
+      "string": "base64Decode"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var htmlDecode = require('strman').htmlDecode;\nlet result = htmlDecode('&lt;div&gt;');",
+        "html": "<p>var htmlDecode = require(&#39;strman&#39;).htmlDecode;<br />let result = htmlDecode(&#39;&lt;div&gt;&#39;);</p>"
+      },
+      {
+        "type": "params",
+        "string": "{String} value - value to decode.",
+        "html": "<p>{String} value - value to decode.</p>"
+      },
+      {
+        "type": "returns",
+        "string": "- The decoded data.",
+        "types": [],
+        "typesDescription": "",
+        "variable": false,
+        "nonNullable": false,
+        "nullable": false,
+        "optional": false,
+        "description": "<ul>\n<li>The decoded data.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Convert all HTML entities to applicable characters.</p>",
+      "summary": "<p>Convert all HTML entities to applicable characters.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 228,
+    "codeStart": 236,
+    "code": "const htmlDecode = (value) =>\n    replace(value, '(&\\\\w+;)',\n        (match, index) =>\n            typeof entitiesDecode.get(index) !== undefined ? entitiesDecode.get(index) : match\n        );\n\nexport {htmlDecode};\nimport {entitiesEncode} from './lib/entities';\nimport {chars, leftPad, replace} from './strman';\nimport\n    {LENGTH_HEXADECIMAL, LENGTH_BINARY, LENGTH_DECIMAL, BASE_HEXADECIMAL, BASE_BINARY, BASE_DECIMAL}\n    from './lib/numerical.base';\n\nconst encode = (value, length, base) =>\n    chars(value).map((data) => leftPad(data.charCodeAt(0).toString(base), length, '0')).join('');",
+    "ctx": {
+      "type": "declaration",
+      "name": "htmlDecode",
+      "value": "(value) =>",
+      "string": "htmlDecode"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var hexEncode = require('strman').hexEncode;\nlet result = hexEncode(\"strman\");",
+        "html": "<p>var hexEncode = require(&#39;strman&#39;).hexEncode;<br />let result = hexEncode(&quot;strman&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - Value to encode",
+        "name": "value",
+        "description": "<ul>\n<li>Value to encode</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{String} - String in hexadecimal format.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String in hexadecimal format.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Convert string chars to hexadecimal unicode (4 digits)</p>",
+      "summary": "<p>Convert string chars to hexadecimal unicode (4 digits)</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 252,
+    "codeStart": 260,
+    "code": "const hexEncode = (value) => encode(value, LENGTH_HEXADECIMAL, BASE_HEXADECIMAL);\n\nexport {hexEncode};",
+    "ctx": {
+      "type": "declaration",
+      "name": "hexEncode",
+      "value": "(value) => encode(value, LENGTH_HEXADECIMAL, BASE_HEXADECIMAL)",
+      "string": "hexEncode"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var binEncode = require('strman').binEncode;\nlet result = binEncode(\"strman\");",
+        "html": "<p>var binEncode = require(&#39;strman&#39;).binEncode;<br />let result = binEncode(&quot;strman&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - Value to encode",
+        "name": "value",
+        "description": "<ul>\n<li>Value to encode</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{String} - String in binary format.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String in binary format.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Convert string chars to binary unicode (16 digits)</p>",
+      "summary": "<p>Convert string chars to binary unicode (16 digits)</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 264,
+    "codeStart": 272,
+    "code": "const binEncode = (value) =>  encode(value, LENGTH_BINARY, BASE_BINARY);\n\nexport {binEncode};",
+    "ctx": {
+      "type": "declaration",
+      "name": "binEncode",
+      "value": "(value) =>  encode(value, LENGTH_BINARY, BASE_BINARY)",
+      "string": "binEncode"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var decEncode = require('strman').decEncode;\nlet result = decEncode(\"strman\");",
+        "html": "<p>var decEncode = require(&#39;strman&#39;).decEncode;<br />let result = decEncode(&quot;strman&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - Value to encode",
+        "name": "value",
+        "description": "<ul>\n<li>Value to encode</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{String} - String in decimal format.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String in decimal format.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Convert string chars to decimal unicode (5 digits)</p>",
+      "summary": "<p>Convert string chars to decimal unicode (5 digits)</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 276,
+    "codeStart": 284,
+    "code": "const decEncode = (value) => encode(value, LENGTH_DECIMAL, BASE_DECIMAL);\n\nexport {decEncode};",
+    "ctx": {
+      "type": "declaration",
+      "name": "decEncode",
+      "value": "(value) => encode(value, LENGTH_DECIMAL, BASE_DECIMAL)",
+      "string": "decEncode"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var urlEncode = require('strman').urlEncode;\nlet result = urlEncode(\"https://github.com/dleitee/strman/&name=áéíóú\");",
+        "html": "<p>var urlEncode = require(&#39;strman&#39;).urlEncode;<br />let result = urlEncode(&quot;<a href=\"https://github.com/dleitee/strman/&amp;name=áéíóú\">https://github.com/dleitee/strman/&amp;name=áéíóú</a>&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The string to be encoded",
+        "name": "value",
+        "description": "<ul>\n<li>The string to be encoded</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{String} - Returns a string in which all non-alphanumeric characters except -_.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>Returns a string in which all non-alphanumeric characters except -_.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Replaces all characters with the appropriate UTF-8 escape sequences.</p>",
+      "summary": "<p>Replaces all characters with the appropriate UTF-8 escape sequences.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 289,
+    "codeStart": 297,
+    "code": "const urlEncode = (value) => encodeURI(value);\n\nexport {urlEncode};",
+    "ctx": {
+      "type": "declaration",
+      "name": "urlEncode",
+      "value": "(value) => encodeURI(value)",
+      "string": "urlEncode"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var base64Encode = require('strman').base64Encode;\nlet result = base64Encode(\"strman\");",
+        "html": "<p>var base64Encode = require(&#39;strman&#39;).base64Encode;<br />let result = base64Encode(&quot;strman&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The data to encode.",
+        "name": "value",
+        "description": "<ul>\n<li>The data to encode.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "- The encoded data.",
+        "types": [],
+        "typesDescription": "",
+        "variable": false,
+        "nonNullable": false,
+        "nullable": false,
+        "optional": false,
+        "description": "<ul>\n<li>The encoded data.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Encodes data with MIME base64.<br />Base64-encoded data takes about 33% more space than the original data.</p>",
+      "summary": "<p>Encodes data with MIME base64.<br />Base64-encoded data takes about 33% more space than the original data.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 301,
+    "codeStart": 310,
+    "code": "const base64Encode = (value) => new Buffer(value).toString('base64');\n\nexport {base64Encode};",
+    "ctx": {
+      "type": "declaration",
+      "name": "base64Encode",
+      "value": "(value) => new Buffer(value).toString('base64')",
+      "string": "base64Encode"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var htmlEncode = require('strman').htmlEncode;\nlet result = htmlEncode('<div>');",
+        "html": "<p>var htmlEncode = require(&#39;strman&#39;).htmlEncode;<br />let result = htmlEncode(&#39;<div>&#39;);</p>"
+      },
+      {
+        "type": "params",
+        "string": "{String} value - value to encode.",
+        "html": "<p>{String} value - value to encode.</p>"
+      },
+      {
+        "type": "returns",
+        "string": "- The encoded data.",
+        "types": [],
+        "typesDescription": "",
+        "variable": false,
+        "nonNullable": false,
+        "nullable": false,
+        "optional": false,
+        "description": "<ul>\n<li>The encoded data.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Convert all applicable characters to HTML entities.</p>",
+      "summary": "<p>Convert all applicable characters to HTML entities.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 314,
+    "codeStart": 322,
+    "code": "const htmlEncode = (value) => replace(value, '[\\\\u00A0-\\\\u9999<>\\\\&]',\n    (match) =>\n        typeof entitiesEncode.get(match) !== undefined ? entitiesEncode.get(match) : match , true, true);\n\nexport {htmlEncode};\nimport {ascii} from './lib/ascii';\nimport {_pop} from './lib/array';\nimport {toCaseSensitive} from './lib/case';",
+    "ctx": {
+      "type": "declaration",
+      "name": "htmlEncode",
+      "value": "(value) => replace(value, '[\\\\u00A0-\\\\u9999<>\\\\&]',",
+      "string": "htmlEncode"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var isString = require('strman').isString;\nlet title = \"A Javascript string manipulation library.\";\nlet result = isString(title);",
+        "html": "<p>var isString = require(&#39;strman&#39;).isString;<br />let title = &quot;A Javascript string manipulation library.&quot;;<br />let result = isString(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{Boolean} - if 'value' isString, return true, else false.",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>if &#39;value&#39; isString, return true, else false.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Checks whether a string.</p>",
+      "summary": "<p>Checks whether a string.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 330,
+    "codeStart": 339,
+    "code": "const isString = value =>\n    Object.prototype.toString.call(value) === '[object String]';\n\nexport {isString};",
+    "ctx": {
+      "type": "declaration",
+      "name": "isString",
+      "value": "value =>",
+      "string": "isString"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var trim = require('strman').trim;\nlet title = \"   strman   \";\nlet result = trim(title);",
+        "html": "<p>var trim = require(&#39;strman&#39;).trim;<br />let title = &quot;   strman   &quot;;<br />let result = trim(title);</p>"
+      },
+      {
+        "type": "params",
+        "string": "{String} value - String to remove spaces.",
+        "html": "<p>{String} value - String to remove spaces.</p>"
+      },
+      {
+        "type": "params",
+        "string": "{String = ' '} char - if you need remove other char on boarders.",
+        "html": "<p>{String = &#39; &#39;} char - if you need remove other char on boarders.</p>"
+      },
+      {
+        "type": "return",
+        "string": "{String} - String without boarders spaces.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String without boarders spaces.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Remove all spaces on left and right.</p>",
+      "summary": "<p>Remove all spaces on left and right.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 344,
+    "codeStart": 354,
+    "code": "const trim = (value, char = ' ') => leftTrim(rightTrim(value, char), char);\n\nexport {trim};",
+    "ctx": {
+      "type": "declaration",
+      "name": "trim",
+      "value": "(value, char = ' ') => leftTrim(rightTrim(value, char), char)",
+      "string": "trim"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var leftTrim = require('strman').leftTrim;\nlet title = \"   strman\";\nlet result = leftTrim(title);",
+        "html": "<p>var leftTrim = require(&#39;strman&#39;).leftTrim;<br />let title = &quot;   strman&quot;;<br />let result = leftTrim(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "params",
+        "string": "{String = ' '} char - if you need remove other char on left boarders.",
+        "html": "<p>{String = &#39; &#39;} char - if you need remove other char on left boarders.</p>"
+      },
+      {
+        "type": "return",
+        "string": "{String} - String without left boarders spaces.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String without left boarders spaces.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Remove all spaces on left.</p>",
+      "summary": "<p>Remove all spaces on left.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 358,
+    "codeStart": 368,
+    "code": "const leftTrim = (value, char = ' ') => replace(value, `^${char}+`, '');\n\nexport {leftTrim};",
+    "ctx": {
+      "type": "declaration",
+      "name": "leftTrim",
+      "value": "(value, char = ' ') => replace(value, `^${char}+`, '')",
+      "string": "leftTrim"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var rightTrim = require('strman').rightTrim;\nlet title = \"strman     \";\nlet result = rightTrim(title);",
+        "html": "<p>var rightTrim = require(&#39;strman&#39;).rightTrim;<br />let title = &quot;strman     &quot;;<br />let result = rightTrim(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "params",
+        "string": "{String = ' '} char - if you need remove other char on right boarders.",
+        "html": "<p>{String = &#39; &#39;} char - if you need remove other char on right boarders.</p>"
+      },
+      {
+        "type": "return",
+        "string": "{String} - String without right boarders spaces.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String without right boarders spaces.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Remove all spaces on right.</p>",
+      "summary": "<p>Remove all spaces on right.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 372,
+    "codeStart": 382,
+    "code": "const rightTrim = (value, char = ' ') => replace(value, `${char}+$`, '');\n\n export {rightTrim};",
+    "ctx": {
+      "type": "declaration",
+      "name": "rightTrim",
+      "value": "(value, char = ' ') => replace(value, `${char}+$`, '')",
+      "string": "rightTrim"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var removeSpaces = require('strman').removeSpaces;\nlet title = \"  s t r  m  a n     \";\nlet result = removeSpaces(title);",
+        "html": "<p>var removeSpaces = require(&#39;strman&#39;).removeSpaces;<br />let title = &quot;  s t r  m  a n     &quot;;<br />let result = removeSpaces(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} replaced - Value to replace.",
+        "name": "replaced",
+        "description": "<ul>\n<li>Value to replace.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String without spaces.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String without spaces.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Remove all spaces and replace for value.</p>",
+      "summary": "<p>Remove all spaces and replace for value.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 386,
+    "codeStart": 396,
+    "code": "const removeSpaces = (value, replaced = '') => replace(value, '\\\\s+', replaced);\n\nexport {removeSpaces};",
+    "ctx": {
+      "type": "declaration",
+      "name": "removeSpaces",
+      "value": "(value, replaced = '') => replace(value, '\\\\s+', replaced)",
+      "string": "removeSpaces"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} search - String to search.",
+        "name": "search",
+        "description": "<ul>\n<li>String to search.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} newvalue - String to replace.",
+        "name": "newvalue",
+        "description": "<ul>\n<li>String to replace.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} caseSensitive - if you use caseSensitive replace.",
+        "name": "caseSensitive",
+        "description": "<ul>\n<li>if you use caseSensitive replace.</li>\n</ul>\n",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} multiline - if you use multiline replace.",
+        "name": "multiline",
+        "description": "<ul>\n<li>if you use multiline replace.</li>\n</ul>\n",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String replaced with 'newvalue'.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String replaced with &#39;newvalue&#39;.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Replace all ocurrences of &#39;search&#39; value to &#39;newvalue&#39;.</p><p>var replace = require(&#39;strman&#39;).replace;<br />let title = &quot;superman&quot;;<br />let result = replace(title, &#39;upe&#39;, &#39;t&#39;);</p>",
+      "summary": "<p>Replace all ocurrences of &#39;search&#39; value to &#39;newvalue&#39;.</p>",
+      "body": "<p>var replace = require(&#39;strman&#39;).replace;<br />let title = &quot;superman&quot;;<br />let result = replace(title, &#39;upe&#39;, &#39;t&#39;);</p>"
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 400,
+    "codeStart": 413,
+    "code": "const replace = (value, search = '', newvalue = '', caseSensitive = true, multiline = true) => {\n    var flags = caseSensitive ? 'g' : 'gi';\n\n    multiline ? flags + 'm' : flags;\n\n    return value.replace(new RegExp(search, flags), newvalue);\n\n};\n\nexport {replace};",
+    "ctx": {
+      "type": "declaration",
+      "name": "replace",
+      "value": "(value, search = '', newvalue = '', caseSensitive = true, multiline = true) => {",
+      "string": "replace"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var transliterate = require('strman').transliterate;\nlet title = \"strmáñ\";\nlet result = transliterate(title);",
+        "html": "<p>var transliterate = require(&#39;strman&#39;).transliterate;<br />let title = &quot;strmáñ&quot;;<br />let result = transliterate(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String without non valid characters.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String without non valid characters.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Remove all non valid characters. Example: change á =&gt; a or ẽ =&gt; e.</p>",
+      "summary": "<p>Remove all non valid characters. Example: change á =&gt; a or ẽ =&gt; e.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 424,
+    "codeStart": 433,
+    "code": "const transliterate = value => {\n    for(let key in ascii){\n        ascii[key].map((char) => value = replace(value, char, key));\n    }\n    return value;\n};\n\nexport {transliterate};",
+    "ctx": {
+      "type": "declaration",
+      "name": "transliterate",
+      "value": "value => {",
+      "string": "transliterate"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value Initial value",
+        "name": "value",
+        "description": "<p>Initial value</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} appends Spreaded array with strings to append",
+        "name": "appends",
+        "description": "<p>Spreaded array with strings to append</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} The concatenated string",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<p>The concatenated string</p>"
+      },
+      {
+        "type": "playground",
+        "string": "var strman = require('strman')\n\nlet title = 's'\nstrman.append(title, 'tr', 'm', 'an') // returns 'strman'",
+        "html": "<p>var strman = require(&#39;strman&#39;)</p><p>let title = &#39;s&#39;<br />strman.append(title, &#39;tr&#39;, &#39;m&#39;, &#39;an&#39;) // returns &#39;strman&#39;</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Append Strings on Value with spreaded arguments</p>",
+      "summary": "<p>Append Strings on Value with spreaded arguments</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 442,
+    "codeStart": 453,
+    "code": "const append = (value, ...appends) => appendArray(value, appends);\n\nexport {append};",
+    "ctx": {
+      "type": "declaration",
+      "name": "append",
+      "value": "(value, ...appends) => appendArray(value, appends)",
+      "string": "append"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value String initial",
+        "name": "value",
+        "description": "<p>String initial</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String[]} append Array with strings to append",
+        "name": "append",
+        "description": "<p>Array with strings to append</p>",
+        "types": [
+          "Array.<String>"
+        ],
+        "typesDescription": "<code>Array</code>.&lt;<code>String</code>&gt;",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} The concatenated string",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<p>The concatenated string</p>"
+      },
+      {
+        "type": "playground",
+        "string": "var strman = require('strman')\n\nlet s = 's'\nstrman.appendArray(s, ['tr', 'm', 'an']) // returns 'strman'",
+        "html": "<p>var strman = require(&#39;strman&#39;)</p><p>let s = &#39;s&#39;<br />strman.appendArray(s, [&#39;tr&#39;, &#39;m&#39;, &#39;an&#39;]) // returns &#39;strman&#39;</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Append Array of Strings on Value</p>",
+      "summary": "<p>Append Array of Strings on Value</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 457,
+    "codeStart": 468,
+    "code": "const appendArray = (value, appends = []) => {\n\n    if(length(appends) === 0){\n        return value;\n    }\n\n    return value + appends.join('');\n};\n\nexport {appendArray};",
+    "ctx": {
+      "type": "declaration",
+      "name": "appendArray",
+      "value": "(value, appends = []) => {",
+      "string": "appendArray"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value The input string",
+        "name": "value",
+        "description": "<p>The input string</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} index The index for which to extract the character",
+        "name": "index",
+        "description": "<p>The index for which to extract the character</p>",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} The character at position index",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<p>The character at position index</p>"
+      },
+      {
+        "type": "playground",
+        "string": "var strman = require('strman')\n\nlet title = 'abc'\nstrman.at(title, 1) // returns 'b'",
+        "html": "<p>var strman = require(&#39;strman&#39;)</p><p>let title = &#39;abc&#39;<br />strman.at(title, 1) // returns &#39;b&#39;</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Get the character at index</p>",
+      "summary": "<p>Get the character at index</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 480,
+    "codeStart": 491,
+    "code": "const at = (value, index) => substr(value, index, 1);\n\nexport {at};",
+    "ctx": {
+      "type": "declaration",
+      "name": "at",
+      "value": "(value, index) => substr(value, index, 1)",
+      "string": "at"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value Input string",
+        "name": "value",
+        "description": "<p>Input string</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} start The start string to look for",
+        "name": "start",
+        "description": "<p>The start string to look for</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} end The end string to look for",
+        "name": "end",
+        "description": "<p>The end string to look for</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String[]} An array with all the matches between a pair of `start` and `end`",
+        "types": [
+          "Array.<String>"
+        ],
+        "typesDescription": "<code>Array</code>.&lt;<code>String</code>&gt;",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<p>An array with all the matches between a pair of <code>start</code> and <code>end</code></p>"
+      },
+      {
+        "type": "playground",
+        "string": "var strman = require('strman')\n\nlet title = '[abc][def]'\nstrman.between(title, '[', ']') // returns ['abc', 'def']",
+        "html": "<p>var strman = require(&#39;strman&#39;)</p><p>let title = &#39;[abc][def]&#39;<br />strman.between(title, &#39;[&#39;, &#39;]&#39;) // returns [&#39;abc&#39;, &#39;def&#39;]</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Returns array with strings between [start] and [end]</p>",
+      "summary": "<p>Returns array with strings between [start] and [end]</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 495,
+    "codeStart": 507,
+    "code": "const between = (value, start, end) =>\n    _pop(split(value, end).map((text) => substr(text, indexOf(text, start)+length(start))));\n\nexport {between};",
+    "ctx": {
+      "type": "declaration",
+      "name": "between",
+      "value": "(value, start, end) =>",
+      "string": "between"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value The input string",
+        "name": "value",
+        "description": "<p>The input string</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{String[]} The array with the single characters of `value`",
+        "types": [
+          "Array.<String>"
+        ],
+        "typesDescription": "<code>Array</code>.&lt;<code>String</code>&gt;",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<p>The array with the single characters of <code>value</code></p>"
+      },
+      {
+        "type": "playground",
+        "string": "var strman = require('strman')\n\nlet title = 'abc'\nstrman.chars(title) // returns ['a', 'b', 'c']",
+        "html": "<p>var strman = require(&#39;strman&#39;)</p><p>let title = &#39;abc&#39;<br />strman.chars(title) // returns [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Returns an array consisting of the characters in the string.</p>",
+      "summary": "<p>Returns an array consisting of the characters in the string.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 512,
+    "codeStart": 522,
+    "code": "const chars = value => value.split('');\n\nexport {chars};",
+    "ctx": {
+      "type": "declaration",
+      "name": "chars",
+      "value": "value => value.split('')",
+      "string": "chars"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value The input string",
+        "name": "value",
+        "description": "<p>The input string</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} The whitespace collapsed string",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<p>The whitespace collapsed string</p>"
+      },
+      {
+        "type": "playground",
+        "string": "var strman = require('strman')\n\nlet title = '  a  b  c  '\nstrman.collapseWhitespace(title) // returns 'a b c'",
+        "html": "<p>var strman = require(&#39;strman&#39;)</p><p>let title = &#39;  a  b  c  &#39;<br />strman.collapseWhitespace(title) // returns &#39;a b c&#39;</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Replaces consecutive whitespace characters with a single space</p>",
+      "summary": "<p>Replaces consecutive whitespace characters with a single space</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 526,
+    "codeStart": 536,
+    "code": "const collapseWhitespace = value => trim(replace(value, '\\\\s\\\\s+',' '));\n\nexport {collapseWhitespace};",
+    "ctx": {
+      "type": "declaration",
+      "name": "collapseWhitespace",
+      "value": "value => trim(replace(value, '\\\\s\\\\s+',' '))",
+      "string": "collapseWhitespace"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var removeNonWords = require('strman').removeNonWords;\nlet title = \"__strman../\";\nlet result = removeNonWords(title);",
+        "html": "<p>var removeNonWords = require(&#39;strman&#39;).removeNonWords;<br />let title = &quot;__strman../&quot;;<br />let result = removeNonWords(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} replaced - Value to replace.",
+        "name": "replaced",
+        "description": "<ul>\n<li>Value to replace.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String without non word characters.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String without non word characters.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Remove all non word characters.</p>",
+      "summary": "<p>Remove all non word characters.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 540,
+    "codeStart": 550,
+    "code": "const removeNonWords = (value, replaced = '') => replace(value, '[^\\\\w]+', replaced);\n\nexport {removeNonWords};",
+    "ctx": {
+      "type": "declaration",
+      "name": "removeNonWords",
+      "value": "(value, replaced = '') => replace(value, '[^\\\\w]+', replaced)",
+      "string": "removeNonWords"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value The input string",
+        "name": "value",
+        "description": "<p>The input string</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} needle The string which is checked to be contained within `value`",
+        "name": "needle",
+        "description": "<p>The string which is checked to be contained within <code>value</code></p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} [caseSensitive=true] Use case (in-)sensitive matching",
+        "name": "[caseSensitive=true]",
+        "description": "<p>Use case (in-)sensitive matching</p>",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": true,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{Boolean} True if `needle` is contained",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<p>True if <code>needle</code> is contained</p>"
+      },
+      {
+        "type": "playground",
+        "string": "var strman = require('strman')\n\nlet title = 'Daniel Leite'\nlet needle = 'leite'\nstrman.contains(title, needle, false) // returns true",
+        "html": "<p>var strman = require(&#39;strman&#39;)</p><p>let title = &#39;Daniel Leite&#39;<br />let needle = &#39;leite&#39;<br />strman.contains(title, needle, false) // returns true</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Verifies that the needle is contained in value</p>",
+      "summary": "<p>Verifies that the needle is contained in value</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 554,
+    "codeStart": 567,
+    "code": "const contains = (value, needle, caseSensitive = true) =>\n    indexOf(value, needle, 0, caseSensitive) > -1;\n\nexport {contains};",
+    "ctx": {
+      "type": "declaration",
+      "name": "contains",
+      "value": "(value, needle, caseSensitive = true) =>",
+      "string": "contains"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value The input string",
+        "name": "value",
+        "description": "<p>The input string</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String[]} needles An array of strings which are checked to be contained within `value`",
+        "name": "needles",
+        "description": "<p>An array of strings which are checked to be contained within <code>value</code></p>",
+        "types": [
+          "Array.<String>"
+        ],
+        "typesDescription": "<code>Array</code>.&lt;<code>String</code>&gt;",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} [caseSensitive=true] Use case (in-)sensitive matching",
+        "name": "[caseSensitive=true]",
+        "description": "<p>Use case (in-)sensitive matching</p>",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": true,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{Boolean} True if all `needles` are contained",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<p>True if all <code>needles</code> are contained</p>"
+      },
+      {
+        "type": "playground",
+        "string": "var strman = require('strman')\n\nlet title = 'Daniel Leite'\nlet needles = ['Leite', 'Daniel']\nstrman.containsAll(title, needles) // returns true",
+        "html": "<p>var strman = require(&#39;strman&#39;)</p><p>let title = &#39;Daniel Leite&#39;<br />let needles = [&#39;Leite&#39;, &#39;Daniel&#39;]<br />strman.containsAll(title, needles) // returns true</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Verifies that all needles are contained in value</p>",
+      "summary": "<p>Verifies that all needles are contained in value</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 572,
+    "codeStart": 585,
+    "code": "const containsAll = (value, needles, caseSensitive = true) =>\n    length(needles) > 0?needles.reduce((previous, current) =>\n        !contains(value, current, caseSensitive)?false:previous && true\n        , true):false;\n\nexport {containsAll};",
+    "ctx": {
+      "type": "declaration",
+      "name": "containsAll",
+      "value": "(value, needles, caseSensitive = true) =>",
+      "string": "containsAll"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value The input string",
+        "name": "value",
+        "description": "<p>The input string</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String[]} needles An array of string which are checked to be contained within `value`",
+        "name": "needles",
+        "description": "<p>An array of string which are checked to be contained within <code>value</code></p>",
+        "types": [
+          "Array.<String>"
+        ],
+        "typesDescription": "<code>Array</code>.&lt;<code>String</code>&gt;",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} [caseSensitive=true] Use case (in-)sensitive matching",
+        "name": "[caseSensitive=true]",
+        "description": "<p>Use case (in-)sensitive matching</p>",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": true,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{Boolean} True if at least one of `needles` is contained",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<p>True if at least one of <code>needles</code> is contained</p>"
+      },
+      {
+        "type": "playground",
+        "string": "var strman = require('strman')\n\nlet title = 'Daniel Leite'\nlet needles = ['Leite', 'Oliveira']\nstrman.containsAny(title, needles) // returns true",
+        "html": "<p>var strman = require(&#39;strman&#39;)</p><p>let title = &#39;Daniel Leite&#39;<br />let needles = [&#39;Leite&#39;, &#39;Oliveira&#39;]<br />strman.containsAny(title, needles) // returns true</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Verifies that one or more of needles are contained in value</p>",
+      "summary": "<p>Verifies that one or more of needles are contained in value</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 592,
+    "codeStart": 605,
+    "code": "const containsAny = (value, needles, caseSensitive = true) =>\n    needles.reduce((previous, current) =>\n        contains(value, current, caseSensitive)?true:previous, false);\n\nexport {containsAny};",
+    "ctx": {
+      "type": "declaration",
+      "name": "containsAny",
+      "value": "(value, needles, caseSensitive = true) =>",
+      "string": "containsAny"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "private",
+        "string": "",
+        "visibility": "private",
+        "html": ""
+      },
+      {
+        "type": "param",
+        "string": "value,",
+        "name": "value,",
+        "description": "",
+        "types": [],
+        "typesDescription": "",
+        "variable": false,
+        "nonNullable": false,
+        "nullable": false,
+        "optional": false,
+        "html": "<p>value,</p>"
+      },
+      {
+        "type": "param",
+        "string": "substr,",
+        "name": "substr,",
+        "description": "",
+        "types": [],
+        "typesDescription": "",
+        "variable": false,
+        "nonNullable": false,
+        "nullable": false,
+        "optional": false,
+        "html": "<p>substr,</p>"
+      },
+      {
+        "type": "param",
+        "string": "position = 0,",
+        "name": "position",
+        "description": "<p>= 0,</p>",
+        "types": [],
+        "typesDescription": "",
+        "variable": false,
+        "nonNullable": false,
+        "nullable": false,
+        "optional": false
+      },
+      {
+        "type": "param",
+        "string": "count = 0,",
+        "name": "count",
+        "description": "<p>= 0,</p>",
+        "types": [],
+        "typesDescription": "",
+        "variable": false,
+        "nonNullable": false,
+        "nullable": false,
+        "optional": false
+      },
+      {
+        "type": "param",
+        "string": "allowOverlapping = false",
+        "name": "allowOverlapping",
+        "description": "<p>= false</p>",
+        "types": [],
+        "typesDescription": "",
+        "variable": false,
+        "nonNullable": false,
+        "nullable": false,
+        "optional": false
+      },
+      {
+        "type": "return",
+        "string": "integer",
+        "types": [],
+        "typesDescription": "",
+        "variable": false,
+        "nonNullable": false,
+        "nullable": false,
+        "optional": false,
+        "description": "<p>integer</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Polyfill to countSubstr function</p>",
+      "summary": "<p>Polyfill to countSubstr function</p>",
+      "body": ""
+    },
+    "isPrivate": true,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 611,
+    "codeStart": 621,
+    "code": "const _countSubstring = (value, _substr, allowOverlapping = false, position = 0, count = 0) => {\n\n    let _position = indexOf(value, _substr, position);\n\n    if(_position === -1){\n        return count;\n    }\n\n    if(!allowOverlapping){\n        _position = _position + length(_substr) - 1;\n    }\n\n    return _countSubstring(value, _substr, allowOverlapping, _position + 1, count + 1);\n\n};",
+    "ctx": {
+      "type": "declaration",
+      "name": "_countSubstring",
+      "value": "(value, _substr, allowOverlapping = false, position = 0, count = 0) => {",
+      "string": "_countSubstring"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value The input string",
+        "name": "value",
+        "description": "<p>The input string</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} substr The substring to look for",
+        "name": "substr",
+        "description": "<p>The substring to look for</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} [caseSensitive=true] Use case (in-)sensitive matching",
+        "name": "[caseSensitive=true]",
+        "description": "<p>Use case (in-)sensitive matching</p>",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": true,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} [allowOverlapping=false] Allow overlapping substrings to be counted",
+        "name": "[allowOverlapping=false]",
+        "description": "<p>Allow overlapping substrings to be counted</p>",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": true,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{Number} The number of matches",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<p>The number of matches</p>"
+      },
+      {
+        "type": "playground",
+        "string": "var strman = require('strman')\n\nlet title = 'Daniel Leite'\nlet substr = 'Leite'\nstrman.counSubstr(title, substr) // returns 1",
+        "html": "<p>var strman = require(&#39;strman&#39;)</p><p>let title = &#39;Daniel Leite&#39;<br />let substr = &#39;Leite&#39;<br />strman.counSubstr(title, substr) // returns 1</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Count the number of times substr appears in value</p>",
+      "summary": "<p>Count the number of times substr appears in value</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 637,
+    "codeStart": 651,
+    "code": "const countSubstr = (value, _substr, caseSensitive = true, allowOverlapping = false) =>\n    _countSubstring(\n        toCaseSensitive(value, caseSensitive),\n        toCaseSensitive(_substr, caseSensitive),\n        allowOverlapping\n    );\n\nexport {countSubstr};",
+    "ctx": {
+      "type": "declaration",
+      "name": "countSubstr",
+      "value": "(value, _substr, caseSensitive = true, allowOverlapping = false) =>",
+      "string": "countSubstr"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value The input string",
+        "name": "value",
+        "description": "<p>The input string</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} search The string to search for",
+        "name": "search",
+        "description": "<p>The string to search for</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{?Number} [position] The start position/index within `value` to start searching",
+        "name": "[position]",
+        "description": "<p>The start position/index within <code>value</code> to start searching</p>",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>|<code>null</code>",
+        "optional": true,
+        "nullable": true,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} [caseSensitive=true] Use case (in-)sensitive matching",
+        "name": "[caseSensitive=true]",
+        "description": "<p>Use case (in-)sensitive matching</p>",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": true,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{Boolean} True if `input` ends with `search`",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<p>True if <code>input</code> ends with <code>search</code></p>"
+      },
+      {
+        "type": "playground",
+        "string": "var strman = require('strman')\n\nlet value = 'Daniel Leite'\nlet search = 'Leite'\nstrman.endsWith(value, search) // returns true",
+        "html": "<p>var strman = require(&#39;strman&#39;)</p><p>let value = &#39;Daniel Leite&#39;<br />let search = &#39;Leite&#39;<br />strman.endsWith(value, search) // returns true</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Test if <code>value</code> ends with <code>search</code></p>",
+      "summary": "<p>Test if <code>value</code> ends with <code>search</code></p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 660,
+    "codeStart": 674,
+    "code": "const endsWith = (value, search, position = null, caseSensitive = true) => {\n\n    if (typeof position !== 'number' || !isFinite(position)\n            || Math.floor(position) !== position || position > length(value)) {\n        position = length(value);\n    }\n\n    position -= length(search);\n\n    const lastIndex = indexOf(\n                    toCaseSensitive(value, caseSensitive),\n                    toCaseSensitive(search, caseSensitive),\n                    position\n                );\n\n    return lastIndex !== -1 && lastIndex === position;\n\n};\n\nexport {endsWith};",
+    "ctx": {
+      "type": "declaration",
+      "name": "endsWith",
+      "value": "(value, search, position = null, caseSensitive = true) => {",
+      "string": "endsWith"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var startsWith = require('strman').startsWith;\nlet title = \"strman\";\nlet result = startsWith(title, 'str');",
+        "html": "<p>var startsWith = require(&#39;strman&#39;).startsWith;<br />let title = &quot;strman&quot;;<br />let result = startsWith(title, &#39;str&#39;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} search - Value to search.",
+        "name": "search",
+        "description": "<ul>\n<li>Value to search.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} position - offset to search.",
+        "name": "position",
+        "description": "<ul>\n<li>offset to search.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} caseSensitive - if you use caseSensitive to test.",
+        "name": "caseSensitive",
+        "description": "<ul>\n<li>if you use caseSensitive to test.</li>\n</ul>\n",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{Boolean} - If 'value' startsWith 'search' return true, else false.",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>If &#39;value&#39; startsWith &#39;search&#39; return true, else false.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Test if &#39;value&#39; starts with &#39;search&#39;</p>",
+      "summary": "<p>Test if &#39;value&#39; starts with &#39;search&#39;</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 695,
+    "codeStart": 707,
+    "code": "const startsWith = (value, search, position = 0, caseSensitive = true) =>\n    substr(\n        toCaseSensitive(value, caseSensitive),\n        position,\n        length(search)\n    ) === toCaseSensitive(search, caseSensitive);\n\nexport {startsWith};",
+    "ctx": {
+      "type": "declaration",
+      "name": "startsWith",
+      "value": "(value, search, position = 0, caseSensitive = true) =>",
+      "string": "startsWith"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value The input string",
+        "name": "value",
+        "description": "<p>The input string</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} substr The substr to be ensured to be left",
+        "name": "substr",
+        "description": "<p>The substr to be ensured to be left</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} [caseSensitive=true] Use case (in-)sensitive matching for determining if `value` already starts with `substr`",
+        "name": "[caseSensitive=true]",
+        "description": "<p>Use case (in-)sensitive matching for determining if <code>value</code> already starts with <code>substr</code></p>",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": true,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} The string which is guarenteed to start with `substr`",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<p>The string which is guarenteed to start with <code>substr</code></p>"
+      },
+      {
+        "type": "playground",
+        "string": "var strman = require('strman')\n\nlet value = 'Leite'\nlet substr = 'Daniel '\nstrman.ensureLeft(value, substr) // returns 'Daniel Leite'",
+        "html": "<p>var strman = require(&#39;strman&#39;)</p><p>let value = &#39;Leite&#39;<br />let substr = &#39;Daniel &#39;<br />strman.ensureLeft(value, substr) // returns &#39;Daniel Leite&#39;</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Ensures that the <code>value</code> begins with <code>substr</code>. If it doesn&#39;t, it&#39;s prepended.</p>",
+      "summary": "<p>Ensures that the <code>value</code> begins with <code>substr</code>. If it doesn&#39;t, it&#39;s prepended.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 716,
+    "codeStart": 729,
+    "code": "const ensureLeft = (value, _substr, caseSensitive = true)  => {\n    if(!startsWith(value, _substr, 0, caseSensitive)){\n        return append(_substr, value);\n    }\n\n    return value;\n};\n\nexport  {ensureLeft};",
+    "ctx": {
+      "type": "declaration",
+      "name": "ensureLeft",
+      "value": "(value, _substr, caseSensitive = true)  => {",
+      "string": "ensureLeft"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "param",
+        "string": "{String} value The input string",
+        "name": "value",
+        "description": "<p>The input string</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} substr The substr to be ensured to be right",
+        "name": "substr",
+        "description": "<p>The substr to be ensured to be right</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} [caseSensitive=true] Use case (in-)sensitive matching for determining if `value` already ends with `substr`",
+        "name": "[caseSensitive=true]",
+        "description": "<p>Use case (in-)sensitive matching for determining if <code>value</code> already ends with <code>substr</code></p>",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": true,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} The string which is guarenteed to start with `substr`",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<p>The string which is guarenteed to start with <code>substr</code></p>"
+      },
+      {
+        "type": "playground",
+        "string": "var strman = require('strman')\n\nlet value = 'Daniel'\nlet substr = ' Leite'\nstrman.ensureRight(value, substr) // returns 'Daniel Leite'",
+        "html": "<p>var strman = require(&#39;strman&#39;)</p><p>let value = &#39;Daniel&#39;<br />let substr = &#39; Leite&#39;<br />strman.ensureRight(value, substr) // returns &#39;Daniel Leite&#39;</p>"
+      }
+    ],
+    "description": {
+      "full": "<p>Ensures that the [value] ends with [substr]. If it doesn&#39;t, it&#39;s appended.</p>",
+      "summary": "<p>Ensures that the [value] ends with [substr]. If it doesn&#39;t, it&#39;s appended.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 739,
+    "codeStart": 752,
+    "code": "const ensureRight = (value, _substr, caseSensitive = true)  =>\n    !endsWith(value, _substr, null, caseSensitive)?append(value, _substr):value;\n\nexport {ensureRight};",
+    "ctx": {
+      "type": "declaration",
+      "name": "ensureRight",
+      "value": "(value, _substr, caseSensitive = true)  =>",
+      "string": "ensureRight"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var first = require('strman').first;\nlet title = \"strman\";\nlet result = first(title, 3);",
+        "html": "<p>var first = require(&#39;strman&#39;).first;<br />let title = &quot;strman&quot;;<br />let result = first(title, 3);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} n - Number of chars to return.",
+        "name": "n",
+        "description": "<ul>\n<li>Number of chars to return.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - Return 'n' firsts chars.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>Return &#39;n&#39; firsts chars.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Return the first &#39;n&#39; chars of string.</p>",
+      "summary": "<p>Return the first &#39;n&#39; chars of string.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 757,
+    "codeStart": 767,
+    "code": "const first = (value, n) => substr(value, 0, n);\n\nexport {first};",
+    "ctx": {
+      "type": "declaration",
+      "name": "first",
+      "value": "(value, n) => substr(value, 0, n)",
+      "string": "first"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var last = require('strman').last;\nlet title = \"strman\";\nlet result = last(title, 3);",
+        "html": "<p>var last = require(&#39;strman&#39;).last;<br />let title = &quot;strman&quot;;<br />let result = last(title, 3);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} n - Number of chars to return.",
+        "name": "n",
+        "description": "<ul>\n<li>Number of chars to return.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - Return 'n' lasts chars.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>Return &#39;n&#39; lasts chars.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Return the last &#39;n&#39; chars of string.</p>",
+      "summary": "<p>Return the last &#39;n&#39; chars of string.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 771,
+    "codeStart": 781,
+    "code": "const last = (value, n) => substr(value, -1 * n, n);\n\nexport {last};",
+    "ctx": {
+      "type": "declaration",
+      "name": "last",
+      "value": "(value, n) => substr(value, -1 * n, n)",
+      "string": "last"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var indexOf = require('strman').indexOf;\nlet title = \"strman\";\nlet result = indexOf(title, 'man');",
+        "html": "<p>var indexOf = require(&#39;strman&#39;).indexOf;<br />let title = &quot;strman&quot;;<br />let result = indexOf(title, &#39;man&#39;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} needle - Value to search.",
+        "name": "needle",
+        "description": "<ul>\n<li>Value to search.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} offset - Offset to search.",
+        "name": "offset",
+        "description": "<ul>\n<li>Offset to search.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} caseSensitive - if you use caseSensitive to test.",
+        "name": "caseSensitive",
+        "description": "<ul>\n<li>if you use caseSensitive to test.</li>\n</ul>\n",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{Number} - Return position of the first occurrence of 'needle'.",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>Return position of the first occurrence of &#39;needle&#39;.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>The indexOf() method returns the index within the calling String of the first occurrence<br />of the specified value, starting the search at fromIndex. Returns -1 if the value is not found.</p>",
+      "summary": "<p>The indexOf() method returns the index within the calling String of the first occurrence<br />of the specified value, starting the search at fromIndex. Returns -1 if the value is not found.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 785,
+    "codeStart": 798,
+    "code": "const indexOf = (value, needle, offset = 0, caseSensitive = true) =>\n    toCaseSensitive(value, caseSensitive).indexOf(toCaseSensitive(needle, caseSensitive), offset);\n\nexport {indexOf};",
+    "ctx": {
+      "type": "declaration",
+      "name": "indexOf",
+      "value": "(value, needle, offset = 0, caseSensitive = true) =>",
+      "string": "indexOf"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var lastIndexOf = require('strman').lastIndexOf;\nlet title = \"strman strman\";\nlet result = lastIndexOf(title, 'str');",
+        "html": "<p>var lastIndexOf = require(&#39;strman&#39;).lastIndexOf;<br />let title = &quot;strman strman&quot;;<br />let result = lastIndexOf(title, &#39;str&#39;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} needle - Value to search.",
+        "name": "needle",
+        "description": "<ul>\n<li>Value to search.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} offset - Offset to search.",
+        "name": "offset",
+        "description": "<ul>\n<li>Offset to search.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} caseSensitive - if you use caseSensitive to test.",
+        "name": "caseSensitive",
+        "description": "<ul>\n<li>if you use caseSensitive to test.</li>\n</ul>\n",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{Number} - Return position of the last occurrence of 'needle'.",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>Return position of the last occurrence of &#39;needle&#39;.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>The lastIndexOf() method returns the index within the calling String object of the last<br />occurrence of the specified value, searching backwards from fromIndex. Returns -1 if the<br />value is not found.</p>",
+      "summary": "<p>The lastIndexOf() method returns the index within the calling String object of the last<br />occurrence of the specified value, searching backwards from fromIndex. Returns -1 if the<br />value is not found.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 803,
+    "codeStart": 817,
+    "code": "const lastIndexOf = (value, needle, offset = undefined, caseSensitive = true) =>\n    toCaseSensitive(value, caseSensitive).lastIndexOf(\n            toCaseSensitive(needle, caseSensitive),\n            offset\n        );\n\nexport {lastIndexOf};",
+    "ctx": {
+      "type": "declaration",
+      "name": "lastIndexOf",
+      "value": "(value, needle, offset = undefined, caseSensitive = true) =>",
+      "string": "lastIndexOf"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var insert = require('strman').insert;\nlet title = \"trman\";\nlet result = insert(title, 's', 0);",
+        "html": "<p>var insert = require(&#39;strman&#39;).insert;<br />let title = &quot;trman&quot;;<br />let result = insert(title, &#39;s&#39;, 0);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} _substr - Value to insert.",
+        "name": "_substr",
+        "description": "<ul>\n<li>Value to insert.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} index - Index to insert substr.",
+        "name": "index",
+        "description": "<ul>\n<li>Index to insert substr.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String with substr added.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String with substr added.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Inserts &#39;substr&#39; into the &#39;value&#39; at the &#39;index&#39; provided.</p>",
+      "summary": "<p>Inserts &#39;substr&#39; into the &#39;value&#39; at the &#39;index&#39; provided.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 825,
+    "codeStart": 836,
+    "code": "const insert = (value, _substr, index) => {\n\n    let start = null;\n    let end = null;\n\n    if(index > length(value)){\n        return value;\n    }\n\n    start = substr(value, 0, index);\n    end = substr(value, index, length(value));\n\n    return append(start, _substr, end);\n\n};\n\nexport {insert};",
+    "ctx": {
+      "type": "declaration",
+      "name": "insert",
+      "value": "(value, _substr, index) => {",
+      "string": "insert"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var length = require('strman').length;\nlet title = \"strman\";\nlet result = length(title);",
+        "html": "<p>var length = require(&#39;strman&#39;).length;<br />let title = &quot;strman&quot;;<br />let result = length(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{Number} - Length of the string..",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>Length of the string..</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Returns the length of the string.</p>",
+      "summary": "<p>Returns the length of the string.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 854,
+    "codeStart": 863,
+    "code": "const length = value => value.length;\n\nexport {length};",
+    "ctx": {
+      "type": "declaration",
+      "name": "length",
+      "value": "value => value.length",
+      "string": "length"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var leftPad = require('strman').leftPad;\nlet title = \"strman\";\nlet result = leftPad(title, 10, 0);",
+        "html": "<p>var leftPad = require(&#39;strman&#39;).leftPad;<br />let title = &quot;strman&quot;;<br />let result = leftPad(title, 10, 0);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} _length - Max length of String.",
+        "name": "_length",
+        "description": "<ul>\n<li>Max length of String.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Char} char - Char to repeat.",
+        "name": "char",
+        "description": "<ul>\n<li>Char to repeat.</li>\n</ul>\n",
+        "types": [
+          "Char"
+        ],
+        "typesDescription": "<a href=\"Char.html\">Char</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String pad.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String pad.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Returns a new string of a given length such that the beginning of the string is padded.</p>",
+      "summary": "<p>Returns a new string of a given length such that the beginning of the string is padded.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 867,
+    "codeStart": 878,
+    "code": "const leftPad = (value, _length, char = ' ') => {\n\n   let result = value;\n   char = String(char);\n\n   if(length(char) > 1){\n       char = substr(char, 0, 1);\n   }\n\n   _length = _length - length(value);\n\n   result = append(repeat(char, _length), result);\n\n   return result;\n};\n\nexport {leftPad};",
+    "ctx": {
+      "type": "declaration",
+      "name": "leftPad",
+      "value": "(value, _length, char = ' ') => {",
+      "string": "leftPad"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var rightPad = require('strman').rightPad;\nlet title = \"strman\";\nlet result = rightPad(title, 10, 0);",
+        "html": "<p>var rightPad = require(&#39;strman&#39;).rightPad;<br />let title = &quot;strman&quot;;<br />let result = rightPad(title, 10, 0);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} _length - Max length of String.",
+        "name": "_length",
+        "description": "<ul>\n<li>Max length of String.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Char} char - Char to repeat.",
+        "name": "char",
+        "description": "<ul>\n<li>Char to repeat.</li>\n</ul>\n",
+        "types": [
+          "Char"
+        ],
+        "typesDescription": "<a href=\"Char.html\">Char</a>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - String pad.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String pad.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Returns a new string of a given length such that the ending of the string is padded.</p>",
+      "summary": "<p>Returns a new string of a given length such that the ending of the string is padded.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 896,
+    "codeStart": 907,
+    "code": "const rightPad = (value, _length, char = ' ') => {\n\n    let result = value;\n    char = String(char);\n\n    if(length(char) > 1){\n        char = substr(char, 0, 1);\n    }\n\n    _length = _length - length(value);\n\n    result = append(result, repeat(char, _length));\n\n    return result;\n};\n\nexport {rightPad};",
+    "ctx": {
+      "type": "declaration",
+      "name": "rightPad",
+      "value": "(value, _length, char = ' ') => {",
+      "string": "rightPad"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var substr = require('strman').substr;\nlet title = \"strman\";\nlet result = substr(title, 0, 3);",
+        "html": "<p>var substr = require(&#39;strman&#39;).substr;<br />let title = &quot;strman&quot;;<br />let result = substr(title, 0, 3);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} start - Substring starts.",
+        "name": "start",
+        "description": "<ul>\n<li>Substring starts.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} _length - Substring length.",
+        "name": "_length",
+        "description": "<ul>\n<li>Substring length.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - The Substring!",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>The Substring!</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Alias to substr function.</p>",
+      "summary": "<p>Alias to substr function.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 925,
+    "codeStart": 936,
+    "code": "const substr = (value, start, _length = undefined) => value.substr(start, _length);\n\nexport {substr};",
+    "ctx": {
+      "type": "declaration",
+      "name": "substr",
+      "value": "(value, start, _length = undefined) => value.substr(start, _length)",
+      "string": "substr"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var split = require('strman').split;\nlet title = \"strman\";\nlet result = split(title, '');",
+        "html": "<p>var split = require(&#39;strman&#39;).split;<br />let title = &quot;strman&quot;;<br />let result = split(title, &#39;&#39;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} separator - Split separator.",
+        "name": "separator",
+        "description": "<ul>\n<li>Split separator.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} limit - Split limit.",
+        "name": "limit",
+        "description": "<ul>\n<li>Split limit.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - The String splited!",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>The String splited!</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Alias to split function.</p>",
+      "summary": "<p>Alias to split function.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 940,
+    "codeStart": 951,
+    "code": "const split = (value, separator, limit = undefined) => value.split(separator, limit);\n\nexport {split};",
+    "ctx": {
+      "type": "declaration",
+      "name": "split",
+      "value": "(value, separator, limit = undefined) => value.split(separator, limit)",
+      "string": "split"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var prepend = require('strman').prepend;\nlet title = \"strman\";\nlet result = prepend(title, '_');",
+        "html": "<p>var prepend = require(&#39;strman&#39;).prepend;<br />let title = &quot;strman&quot;;<br />let result = prepend(title, &#39;_&#39;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{...String} prepends - Strings to prepend.",
+        "name": "prepends",
+        "description": "<ul>\n<li>Strings to prepend.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "...<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": true
+      },
+      {
+        "type": "return",
+        "string": "{String} - The String prepended!",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>The String prepended!</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Returns a new string starting with &#39;prepends&#39;.</p>",
+      "summary": "<p>Returns a new string starting with &#39;prepends&#39;.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 955,
+    "codeStart": 965,
+    "code": "const prepend = (value, ...prepends) => prependArray(value, prepends);\n\nexport {prepend};",
+    "ctx": {
+      "type": "declaration",
+      "name": "prepend",
+      "value": "(value, ...prepends) => prependArray(value, prepends)",
+      "string": "prepend"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var prependArray = require('strman').prependArray;\nlet title = \"strman\";\nlet result = prependArray(title, '_');",
+        "html": "<p>var prependArray = require(&#39;strman&#39;).prependArray;<br />let title = &quot;strman&quot;;<br />let result = prependArray(title, &#39;_&#39;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String[]} prepends - Strings to prepend.",
+        "name": "prepends",
+        "description": "<ul>\n<li>Strings to prepend.</li>\n</ul>\n",
+        "types": [
+          "Array.<String>"
+        ],
+        "typesDescription": "<code>Array</code>.&lt;<code>String</code>&gt;",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - The String prepended!",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>The String prepended!</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Returns a new string starting with &#39;prepends&#39;.</p>",
+      "summary": "<p>Returns a new string starting with &#39;prepends&#39;.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 969,
+    "codeStart": 979,
+    "code": "const prependArray = (value, prepends = []) => {\n\n    if(length(prepends) === 0){\n        return value;\n    }\n\n    return prepends.join('') + value;\n};\n\nexport {prependArray};",
+    "ctx": {
+      "type": "declaration",
+      "name": "prependArray",
+      "value": "(value, prepends = []) => {",
+      "string": "prependArray"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var removeLeft = require('strman').removeLeft;\nlet title = \"strman\";\nlet result = removeLeft(title, 'str');",
+        "html": "<p>var removeLeft = require(&#39;strman&#39;).removeLeft;<br />let title = &quot;strman&quot;;<br />let result = removeLeft(title, &#39;str&#39;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} prefix - String to remove on left.",
+        "name": "prefix",
+        "description": "<ul>\n<li>String to remove on left.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} caseSensitive - If you need to caseSensitive.",
+        "name": "caseSensitive",
+        "description": "<ul>\n<li>If you need to caseSensitive.</li>\n</ul>\n",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - The String without prefix!",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>The String without prefix!</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Returns a new string with the &#39;prefix&#39; removed, if present.</p>",
+      "summary": "<p>Returns a new string with the &#39;prefix&#39; removed, if present.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 990,
+    "codeStart": 1001,
+    "code": "const removeLeft = (value, prefix, caseSensitive = true) => {\n\n    if(startsWith(value, prefix, 0, caseSensitive)){\n        return substr(value, length(prefix));\n    }\n\n    return value;\n};\n\nexport {removeLeft};",
+    "ctx": {
+      "type": "declaration",
+      "name": "removeLeft",
+      "value": "(value, prefix, caseSensitive = true) => {",
+      "string": "removeLeft"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var removeRight = require('strman').removeRight;\nlet title = \"strman\";\nlet result = removeRight(title, 'man');",
+        "html": "<p>var removeRight = require(&#39;strman&#39;).removeRight;<br />let title = &quot;strman&quot;;<br />let result = removeRight(title, &#39;man&#39;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} suffix - String to remove on right.",
+        "name": "suffix",
+        "description": "<ul>\n<li>String to remove on right.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Boolean} caseSensitive - If you need to caseSensitive.",
+        "name": "caseSensitive",
+        "description": "<ul>\n<li>If you need to caseSensitive.</li>\n</ul>\n",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - The String without suffix!",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>The String without suffix!</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Returns a new string with the &#39;suffix&#39; removed, if present.</p>",
+      "summary": "<p>Returns a new string with the &#39;suffix&#39; removed, if present.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1012,
+    "codeStart": 1023,
+    "code": "const removeRight = (value, suffix, caseSensitive = true) => {\n    let _length = length(value) - length(suffix);\n\n    if(endsWith(value, suffix, null, caseSensitive)){\n        return substr(value, 0, _length);\n    }\n\n    return value;\n};\n\nexport {removeRight};",
+    "ctx": {
+      "type": "declaration",
+      "name": "removeRight",
+      "value": "(value, suffix, caseSensitive = true) => {",
+      "string": "removeRight"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var repeat = require('strman').repeat;\nlet title = \"strman\";\nlet result = repeat(title, 5);",
+        "html": "<p>var repeat = require(&#39;strman&#39;).repeat;<br />let title = &quot;strman&quot;;<br />let result = repeat(title, 5);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} multiplier - Number of repeats.",
+        "name": "multiplier",
+        "description": "<ul>\n<li>Number of repeats.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - The String repeated!",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>The String repeated!</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Returns a repeated string given a multiplier.</p>",
+      "summary": "<p>Returns a repeated string given a multiplier.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1035,
+    "codeStart": 1045,
+    "code": "const repeat = (value, multiplier) => {\n    let i = 0;\n    let result = '';\n    while(multiplier > i++) {\n        result += value;\n    }\n    return result;\n};\n\nexport {repeat};",
+    "ctx": {
+      "type": "declaration",
+      "name": "repeat",
+      "value": "(value, multiplier) => {",
+      "string": "repeat"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var reverse = require('strman').reverse;\nlet title = \"strman\";\nlet result = reverse(title);",
+        "html": "<p>var reverse = require(&#39;strman&#39;).reverse;<br />let title = &quot;strman&quot;;<br />let result = reverse(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - The String reversed!",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>The String reversed!</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Returns a reversed string.</p>",
+      "summary": "<p>Returns a reversed string.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1056,
+    "codeStart": 1065,
+    "code": "const reverse = value =>\n    split(value, '').reduceRight((previous, current) => append(previous, current), '');\n\nexport {reverse};",
+    "ctx": {
+      "type": "declaration",
+      "name": "reverse",
+      "value": "value =>",
+      "string": "reverse"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "private",
+        "string": "",
+        "visibility": "private",
+        "html": ""
+      },
+      {
+        "type": "param",
+        "string": "{Array} value - The array!.",
+        "name": "value",
+        "description": "<ul>\n<li>The array!.</li>\n</ul>\n",
+        "types": [
+          "Array"
+        ],
+        "typesDescription": "<code>Array</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{Array} - The Array shuffled!",
+        "types": [
+          "Array"
+        ],
+        "typesDescription": "<code>Array</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>The Array shuffled!</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>It returns a array with its values in random order.</p>",
+      "summary": "<p>It returns a array with its values in random order.</p>",
+      "body": ""
+    },
+    "isPrivate": true,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1070,
+    "codeStart": 1076,
+    "code": "const _shuffle =(array) => {\n    let j;\n    let x;\n    let i;\n    for (i = length(array); i; i -= 1) {\n        j = Math.floor(Math.random() * i);\n        x = array[i - 1];\n        array[i - 1] = array[j];\n        array[j] = x;\n    }\n    return array;\n};",
+    "ctx": {
+      "type": "declaration",
+      "name": "_shuffle",
+      "value": "(array) => {",
+      "string": "_shuffle"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var shuffle = require('strman').shuffle;\nlet title = \"strman\";\nlet result = shuffle(title);",
+        "html": "<p>var shuffle = require(&#39;strman&#39;).shuffle;<br />let title = &quot;strman&quot;;<br />let result = shuffle(title);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - The String shuffled!",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>The String shuffled!</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>It returns a string with its characters in random order.</p>",
+      "summary": "<p>It returns a string with its characters in random order.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1089,
+    "codeStart": 1098,
+    "code": "const shuffle = (value) => _shuffle(split(value)).join('');\n\nexport {shuffle};",
+    "ctx": {
+      "type": "declaration",
+      "name": "shuffle",
+      "value": "(value) => _shuffle(split(value)).join('')",
+      "string": "shuffle"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var surround = require('strman').surround;\nlet title = \"strman\";\nlet result = surround(title, '<', '>');",
+        "html": "<p>var surround = require(&#39;strman&#39;).surround;<br />let title = &quot;strman&quot;;<br />let result = surround(title, &#39;&lt;&#39;, &#39;&gt;&#39;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} _substr - The substr to append on left, if substrRight is null, this is appended in right.",
+        "name": "_substr",
+        "description": "<ul>\n<li>The substr to append on left, if substrRight is null, this is appended in right.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} _substrRight - The substr to append on right.",
+        "name": "_substrRight",
+        "description": "<ul>\n<li>The substr to append on right.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - The String with surround substrs!",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>The String with surround substrs!</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Surrounds a &#39;value&#39; with the given &#39;substr&#39;.</p>",
+      "summary": "<p>Surrounds a &#39;value&#39; with the given &#39;substr&#39;.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1102,
+    "codeStart": 1113,
+    "code": "const surround = (value, _substr = '', _substrRight = null) =>\n    append(_substr, value, _substrRight === null ? _substr : _substrRight);\n\nexport {surround};",
+    "ctx": {
+      "type": "declaration",
+      "name": "surround",
+      "value": "(value, _substr = '', _substrRight = null) =>",
+      "string": "surround"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var slice = require('strman').slice;\nlet title = \"strman\";\nlet result = slice(title, 2, 5);",
+        "html": "<p>var slice = require(&#39;strman&#39;).slice;<br />let title = &quot;strman&quot;;<br />let result = slice(title, 2, 5);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - The String!.",
+        "name": "value",
+        "description": "<ul>\n<li>The String!.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} beginSlice - Start of slice.",
+        "name": "beginSlice",
+        "description": "<ul>\n<li>Start of slice.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} endSlice - End of slice.",
+        "name": "endSlice",
+        "description": "<ul>\n<li>End of slice.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "return",
+        "string": "{String} - The String sliced!",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>The String sliced!</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Alias to slice method.</p>",
+      "summary": "<p>Alias to slice method.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1118,
+    "codeStart": 1129,
+    "code": "const slice = (value, beginSlice, endSlice = undefined) => value.slice(beginSlice, endSlice);\n\nexport {slice};",
+    "ctx": {
+      "type": "declaration",
+      "name": "slice",
+      "value": "(value, beginSlice, endSlice = undefined) => value.slice(beginSlice, endSlice)",
+      "string": "slice"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var safeTruncate = require('strman').safeTruncate;\nlet title = \"A Javascript string manipulation library.\";\nlet result = safeTruncate(title, 15, '...');",
+        "html": "<p>var safeTruncate = require(&#39;strman&#39;).safeTruncate;<br />let title = &quot;A Javascript string manipulation library.&quot;;<br />let result = safeTruncate(title, 15, &#39;...&#39;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - Value will be truncated securely.",
+        "name": "value",
+        "description": "<ul>\n<li>Value will be truncated securely.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} _length - Max size of the returned string.",
+        "name": "_length",
+        "description": "<ul>\n<li>Max size of the returned string.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} [_append = ''] - Value that will be added to the end of the return string. Example: '...'",
+        "name": "[_append",
+        "description": "<p>= &#39;&#39;] - Value that will be added to the end of the return string. Example: &#39;...&#39;</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": true,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{String} - String truncated safely.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String truncated safely.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Truncate the string securely, not cutting a word in half. It always returns the last full word.</p>",
+      "summary": "<p>Truncate the string securely, not cutting a word in half. It always returns the last full word.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1133,
+    "codeStart": 1144,
+    "code": "const safeTruncate = (value, _length, _append = '') => {\n\n    let truncated = '';\n\n    if(_length === 0){\n        return '';\n    }\n\n    if (_length >= length(value)) {\n        return value;\n    }\n\n    _length -= length(_append) ;\n    truncated = substr(value, 0, _length);\n\n    let position = indexOf(value, ' ', _length - 1);\n\n    if(position !== _length){\n        let lastPos = lastIndexOf(truncated, ' ');\n        truncated = substr(truncated, 0, lastPos);\n    }\n\n    return append(truncated, _append);\n\n};\n\nexport {safeTruncate};",
+    "ctx": {
+      "type": "declaration",
+      "name": "safeTruncate",
+      "value": "(value, _length, _append = '') => {",
+      "string": "safeTruncate"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var truncate = require('strman').truncate;\nlet title = \"A Javascript string manipulation library.\";\nlet result = truncate(title, 16, '...');",
+        "html": "<p>var truncate = require(&#39;strman&#39;).truncate;<br />let title = &quot;A Javascript string manipulation library.&quot;;<br />let result = truncate(title, 16, &#39;...&#39;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - Value will be truncated unsecurely.",
+        "name": "value",
+        "description": "<ul>\n<li>Value will be truncated unsecurely.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{Number} _length - Size of the returned string.",
+        "name": "_length",
+        "description": "<ul>\n<li>Size of the returned string.</li>\n</ul>\n",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} [_append = ''] - Value that will be added to the end of the return string. Example: '...'",
+        "name": "[_append",
+        "description": "<p>= &#39;&#39;] - Value that will be added to the end of the return string. Example: &#39;...&#39;</p>",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": true,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{String} - String truncated unsafely.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>String truncated unsafely.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Truncate the unsecured form string, cutting the independent string of required position.</p>",
+      "summary": "<p>Truncate the unsecured form string, cutting the independent string of required position.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1172,
+    "codeStart": 1183,
+    "code": "const truncate = (value, _length, _append = '') => {\n\n    let truncated = '';\n\n    if(_length === 0){\n        return '';\n    }\n\n    if (_length >= length(value)) {\n        return value;\n    }\n\n    _length -= length(_append) ;\n    truncated = substr(value, 0, _length);\n\n    return append(truncated, _append);\n\n};\n\nexport {truncate};",
+    "ctx": {
+      "type": "declaration",
+      "name": "truncate",
+      "value": "(value, _length, _append = '') => {",
+      "string": "truncate"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var removeEmptyStrings = require('strman').removeEmptyStrings;\nlet titles = [\"A Javascript string manipulation library.\", null, undefined, '', ' '];\nlet result = removeEmptyStrings(titles);",
+        "html": "<p>var removeEmptyStrings = require(&#39;strman&#39;).removeEmptyStrings;<br />let titles = [&quot;A Javascript string manipulation library.&quot;, null, undefined, &#39;&#39;, &#39; &#39;];<br />let result = removeEmptyStrings(titles);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String[]} strings - Array of strings that will be cleaned.",
+        "name": "strings",
+        "description": "<ul>\n<li>Array of strings that will be cleaned.</li>\n</ul>\n",
+        "types": [
+          "Array.<String>"
+        ],
+        "typesDescription": "<code>Array</code>.&lt;<code>String</code>&gt;",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{String[]} - Array of strings without empty strings.",
+        "types": [
+          "Array.<String>"
+        ],
+        "typesDescription": "<code>Array</code>.&lt;<code>String</code>&gt;",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>Array of strings without empty strings.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Remove empty strings from strings array.</p>",
+      "summary": "<p>Remove empty strings from strings array.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1205,
+    "codeStart": 1214,
+    "code": "const removeEmptyStrings = (strings) => strings.filter(string => string && string !== '');\n\nexport {removeEmptyStrings};",
+    "ctx": {
+      "type": "declaration",
+      "name": "removeEmptyStrings",
+      "value": "(strings) => strings.filter(string => string && string !== '')",
+      "string": "removeEmptyStrings"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var format = require('strman').format;\nlet select = \"SELECT * FROM CONTACTS WHERE NAME LIKE '%{0}%' AND EMAIL LIKE '%{1}%'\";\nlet result = format(select, \"DANIEL\", \"GMAIL\");",
+        "html": "<p>var format = require(&#39;strman&#39;).format;<br />let select = &quot;SELECT * FROM CONTACTS WHERE NAME LIKE &#39;%{0}%&#39; AND EMAIL LIKE &#39;%{1}%&#39;&quot;;<br />let result = format(select, &quot;DANIEL&quot;, &quot;GMAIL&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} value - Value that will be formatted.",
+        "name": "value",
+        "description": "<ul>\n<li>Value that will be formatted.</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String[]} params - Array with the parameters described in the string.",
+        "name": "params",
+        "description": "<ul>\n<li>Array with the parameters described in the string.</li>\n</ul>\n",
+        "types": [
+          "Array.<String>"
+        ],
+        "typesDescription": "<code>Array</code>.&lt;<code>String</code>&gt;",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{String} - Formatted string.",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>Formatted string.</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Formats a string using parameters.</p>",
+      "summary": "<p>Formats a string using parameters.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1218,
+    "codeStart": 1228,
+    "code": "const format = (value, params = []) =>\n    replace(value, '{(\\\\w+)}',\n        (match, index) => typeof params[index] !== undefined ? params[index] : match\n    );\n\nexport {format};",
+    "ctx": {
+      "type": "declaration",
+      "name": "format",
+      "value": "(value, params = []) =>",
+      "string": "format"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var compare = require('strman').compare;\nlet result = compare(\"foo\", \"bar\");",
+        "html": "<p>var compare = require(&#39;strman&#39;).compare;<br />let result = compare(&quot;foo&quot;, &quot;bar&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} stringA - String for the comparative",
+        "name": "stringA",
+        "description": "<ul>\n<li>String for the comparative</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} stringB - String to be compared",
+        "name": "stringB",
+        "description": "<ul>\n<li>String to be compared</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{Number} - +1 if [stringA] > [stringB], -1 if [stringA] < [stringB] and 0 if [stringA] = [stringB]",
+        "types": [
+          "Number"
+        ],
+        "typesDescription": "<code>Number</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>+1 if [stringA] &gt; [stringB], -1 if [stringA] &lt; [stringB] and 0 if [stringA] = [stringB]</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Compares two strings to each other. If they are equivalent, a zero is returned. Otherwise,<br />most of these routines will return a positive or negative result corresponding to whether stringA<br />is lexicographically greater than, or less than, respectively, than stringB.</p>",
+      "summary": "<p>Compares two strings to each other. If they are equivalent, a zero is returned. Otherwise,<br />most of these routines will return a positive or negative result corresponding to whether stringA<br />is lexicographically greater than, or less than, respectively, than stringB.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1235,
+    "codeStart": 1246,
+    "code": "const compare = (stringA, stringB) => {\n    if(equal(stringA, stringB)){\n        return 0;\n    }\n\n    return stringA > stringB? 1 : -1;\n};\n\nexport {compare};",
+    "ctx": {
+      "type": "declaration",
+      "name": "compare",
+      "value": "(stringA, stringB) => {",
+      "string": "compare"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var equal = require('strman').equal;\nlet result = equal(\"foo\", \"foo\");",
+        "html": "<p>var equal = require(&#39;strman&#39;).equal;<br />let result = equal(&quot;foo&quot;, &quot;foo&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} stringA - String for the comparative",
+        "name": "stringA",
+        "description": "<ul>\n<li>String for the comparative</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} stringB - String to be compared",
+        "name": "stringB",
+        "description": "<ul>\n<li>String to be compared</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{Boolean} - [stringA] is equal [stringB]",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>[stringA] is equal [stringB]</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Tests if two strings are equal.</p>",
+      "summary": "<p>Tests if two strings are equal.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1256,
+    "codeStart": 1265,
+    "code": "const equal = (stringA, stringB) => stringA === stringB;\n\nexport {equal};",
+    "ctx": {
+      "type": "declaration",
+      "name": "equal",
+      "value": "(stringA, stringB) => stringA === stringB",
+      "string": "equal"
+    }
+  },
+  {
+    "tags": [
+      {
+        "type": "playground",
+        "string": "var inequal = require('strman').inequal;\nlet result = inequal(\"foo\", \"foo\");",
+        "html": "<p>var inequal = require(&#39;strman&#39;).inequal;<br />let result = inequal(&quot;foo&quot;, &quot;foo&quot;);</p>"
+      },
+      {
+        "type": "param",
+        "string": "{String} stringA - String for the comparative",
+        "name": "stringA",
+        "description": "<ul>\n<li>String for the comparative</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "param",
+        "string": "{String} stringB - String to be compared",
+        "name": "stringB",
+        "description": "<ul>\n<li>String to be compared</li>\n</ul>\n",
+        "types": [
+          "String"
+        ],
+        "typesDescription": "<code>String</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false
+      },
+      {
+        "type": "returns",
+        "string": "{Boolean} - [stringA] is inequal [stringB]",
+        "types": [
+          "Boolean"
+        ],
+        "typesDescription": "<code>Boolean</code>",
+        "optional": false,
+        "nullable": false,
+        "nonNullable": false,
+        "variable": false,
+        "description": "<ul>\n<li>[stringA] is inequal [stringB]</li>\n</ul>\n"
+      }
+    ],
+    "description": {
+      "full": "<p>Tests if two strings are inequal.</p>",
+      "summary": "<p>Tests if two strings are inequal.</p>",
+      "body": ""
+    },
+    "isPrivate": false,
+    "isConstructor": false,
+    "isClass": false,
+    "isEvent": false,
+    "ignore": false,
+    "line": 1269,
+    "codeStart": 1278,
+    "code": "const inequal = (stringA, stringB) => stringA !== stringB;\n\nexport {inequal};\nexport * from './slugify';\n\nexport * from './string.utils';\n\nexport * from './string.cases';\n\nexport * from './string.decoders';\n\nexport * from './string.encoders';",
+    "ctx": {
+      "type": "declaration",
+      "name": "inequal",
+      "value": "(stringA, stringB) => stringA !== stringB",
+      "string": "inequal"
+    }
+  }
+]
